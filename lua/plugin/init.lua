@@ -19,9 +19,18 @@ local config = function(use)
 			{'williamboman/mason-lspconfig.nvim'}
 		}
 	}
-	
+	use {
+			'nvim-lualine/lualine.nvim',
+			requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
+	require('lualine').setup({
+			options = {
+					theme = "nightfly",
+			}
+	})
 	--Themeing
 	use 'EdenEast/nightfox.nvim'
+	require('nightfox').setup()
 	vim.cmd("colorscheme nightfox")
 	if packer_info.packer_bootstrap then
 		require('packer').sync()
