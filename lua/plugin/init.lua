@@ -20,17 +20,22 @@ local config = function(use)
 		}
 	}
 	use {
+			'nvim-telescope/telescope.nvim', tag = '0.1.8',
+			requires = { {'nvim-lua/plenary.nvim'} }
+	}
+	require('telescope').setup()
+	use {
 			'nvim-lualine/lualine.nvim',
 			requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
-	require('lualine').setup({
-			options = {
-					theme = "nightfly",
-			}
-	})
+	require('lualine').setup()
 	--Themeing
 	use 'EdenEast/nightfox.nvim'
-	require('nightfox').setup()
+	require('nightfox').setup({
+			options = {
+					transparent = true,
+			}
+	})
 	vim.cmd("colorscheme nightfox")
 	if packer_info.packer_bootstrap then
 		require('packer').sync()
