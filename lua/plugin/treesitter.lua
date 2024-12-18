@@ -6,7 +6,11 @@ treesitter_config.setup = function()
 		auto_install = true,
 		highlight = {
 			enable = true
-		}
+		},
+        indent = {
+            enable = true,
+            disable = {}, -- Deal with this later
+        }
 	}
 end
 
