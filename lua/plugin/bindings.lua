@@ -18,4 +18,8 @@ binds_table.set_lsp_binds = function(opts)
 	vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 end
 
+binds_table.set_telescope_binds = function()
+    vim.keymap.set('n', 'fd', require('telescope.builtin').find_files)
+end
+
 return binds_table

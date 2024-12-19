@@ -10,4 +10,7 @@ vim.opt.expandtab = true
 --Load plugins
 require("plugin")
 --Load binds
-require("plugin.bindings").set_general_binds()
+local binds = require("plugin.bindings")
+binds.set_general_binds()
+binds.set_telescope_binds()
+
