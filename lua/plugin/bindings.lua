@@ -3,6 +3,7 @@ local binds_table = {}
 
 binds_table.set_general_binds = function()
 	vim.keymap.set('n', '<leader>t', '<cmd> :Ex <CR>')
+    vim.keymap.set('n', '<leader>f', '<cmd> :CHADopen <CR>')
 end
 
 binds_table.set_lsp_binds = function(opts)

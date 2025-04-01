@@ -27,7 +27,13 @@ local config = function(use)
             {'nvim-telescope/telescope-fzf-native.nvim', build = 'make'}
         }
     }
-    require('telescope').setup()
+    require('telescope').setup{
+        defaults = {
+            file_ignore_patterns = {
+                'node_modules'
+            }
+        }
+    }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -40,6 +46,7 @@ local config = function(use)
             transparent = true,
         }
     })
+    use {'ms-jpq/chadtree'}
     vim.cmd("colorscheme nightfox")
     if packer_info.packer_bootstrap then
         require('packer').sync()
