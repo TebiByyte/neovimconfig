@@ -19,6 +19,7 @@ local config = function(use)
             {'williamboman/mason-lspconfig.nvim'}
         }
     }
+    vim.diagnostic.config {virtual_text = true}
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
